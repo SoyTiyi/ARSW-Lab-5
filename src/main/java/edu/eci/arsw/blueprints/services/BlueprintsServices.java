@@ -30,8 +30,8 @@ public class BlueprintsServices {
         bpp.saveBlueprint(bp);
     }
     
-    public Set<Blueprint> getAllBlueprints(){
-        return null;
+    public Set<Blueprint> getAllBlueprints() throws BlueprintNotFoundException{
+        return bpp.getAllBluePrints();
     }
     
     /**
