@@ -3,6 +3,10 @@
 
 ### Arquitecturas de Software
 
+### Integrantes
+
+1. Nikolas Bernal
+2. Santiago Martínez
 
 ## Laboratorio API REST para la gestión de planos
 
