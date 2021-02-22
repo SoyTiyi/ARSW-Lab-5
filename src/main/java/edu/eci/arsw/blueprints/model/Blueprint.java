@@ -22,6 +22,7 @@ public class Blueprint {
     }
          
     public Blueprint(String author, String name){
+        this.author = author;
         this.name=name;
         points=new ArrayList<>();
     }
@@ -31,6 +32,14 @@ public class Blueprint {
     
     public String getName() {
         return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setAuthor(String author){
+        this.author = author;
     }
 
     public String getAuthor() {

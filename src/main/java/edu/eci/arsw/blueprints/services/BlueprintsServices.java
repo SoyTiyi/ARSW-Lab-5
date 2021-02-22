@@ -27,6 +27,7 @@ public class BlueprintsServices {
     BlueprintsPersistence bpp = null;
 
     public void addNewBlueprint(Blueprint bp) throws BlueprintPersistenceException {
+        System.out.println(bp.getAuthor()+" "+bp.getName());
         bpp.saveBlueprint(bp);
     }
     

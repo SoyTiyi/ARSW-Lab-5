@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,12 +30,12 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
     @Autowired
     private filter filter;
 
-    private final Map<Tuple<String, String>, Blueprint> blueprints = new HashMap<>();
+    private final Map<Tuple<String, String>, Blueprint> blueprints = new ConcurrentHashMap<>();
 
     public InMemoryBlueprintPersistence() {
         // load stub data
         Point[] pts = new Point[] { new Point(140, 140), new Point(115, 115) };
-        Blueprint bp = new Blueprint("_authorname_", "_bpname_ ", pts);
+        Blueprint bp = new Blueprint("_authorname_", "_bpname_", pts);
         Blueprint bp2 = new Blueprint("Marx", "El Capital", pts);
         Blueprint bp3 = new Blueprint("Marx", "El manifiesto del partido comunista", pts);
         Blueprint bp4 = new Blueprint("El Rincon de Puh", "Winnie Pooh", pts);
@@ -67,8 +68,10 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
         Set<Blueprint> setBluePrints = new HashSet<Blueprint>();
         Set<Tuple<String, String>> setKeys = blueprints.keySet();
         for (Tuple<String, String> tuple : setKeys) {
-            if (tuple.getElem1() == author) {
+            System.out.println(tuple.getElem1());
+            if (tuple.getElem1().equals(author)) {
                 setBluePrints.add(blueprints.get(tuple));
+                System.out.println("Entre");
             }
         }
         return filter.filterBluePrints(setBluePrints);

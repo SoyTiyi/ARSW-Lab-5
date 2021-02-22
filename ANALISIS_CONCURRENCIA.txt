@@ -1,0 +1,16 @@
+¿Que condiciones de carrera se pueden presentar?
+
+1. Se puede presentar que en el momento en el que un usuario quiera consultar los BluePrints se haga un metodo post y tenga información antigua
+
+2. Que se quiera editar un blueprint especifico por dos usuarios al mismo tiempo, alguno de los dos cambiara la información y el otro no tendra respuesta ya que se cambio la información por el otro usuario
+
+
+¿Cuales son las respectivas regiones críticas?
+
+Se pueden decir que todos los metodos HTTP (GET, POST y PUT)
+
+SOLUCION
+
+Como es un HashMap el que guarda la información de las tuplas las cuales nos sirven para consultar como para editar, lo que hicimos fue utilizar un HashMap Concurrente que nos permite que esta información sea ThreadSafe
+
+
