@@ -94,7 +94,7 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 	}
 	```	
 
-	![](img/media/rest4.png)
+	
 
 
 2.  Para probar que el recurso ‘planos’ acepta e interpreta
@@ -108,7 +108,7 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 	$ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://URL_del_recurso_ordenes -d '{ObjetoJSON}'
 	```	
 
-	![](img/media/rest5.png)
+	![](img/media/rest4.png)
 
 	Con lo anterior, registre un nuevo plano (para 'diseñar' un objeto jSON, puede usar [esta herramienta](http://www.jsoneditoronline.org/)):
 	
@@ -117,6 +117,8 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 
 
 3. Teniendo en cuenta el autor y numbre del plano registrado, verifique que el mismo se pueda obtener mediante una petición GET al recurso '/blueprints/{author}/{bpname}' correspondiente.
+
+	![](img/media/rest5.png)
 
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
 
